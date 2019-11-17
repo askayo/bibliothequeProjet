@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1/dist/vue-resource.min.js"></script>
+</head>
+<body>
+<div id="content">
+    <form id="ajoutLivre" action="http://localhost:3300/admin/nouveauLivre" method="post">
+        <label for="titre">Titre</label>
+        <input type="text" name="titre" >
+        <label for="auteur">Auteur</label>
+        <input type="text" name="auteur" >
+        <label for="resume">Resume</label>
+        <input type="text" name="resume">
+
+        <label for="editeur">Editeur</label>
+        <input type="text" name="editeur">
+        <label for="nbPage">Nombre de pages</label>
+        <input type="text" name="nbPage" >
+        <button type="submit" >Ajouter !</button>
+    </form>
+</div>
+<script>
+
+</script>
+</body>
+</html>

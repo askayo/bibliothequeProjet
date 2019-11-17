@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1/dist/vue-resource.min.js"></script>
+</head>
+<body>
+<div id="content">
+
+    <ul>
+        <li v-for="l in livres">
+             {{l.livre_titre}} // {{l.livre_auteur}} // {{l.livre_editeur}}
+        </li>
+    </ul>
+</div>
+<script>
+    var vue1=new Vue({
+        el: "#content",
+        data: {
+            title: "Liste des livres :",
+            livres: [],
+        },
+        methods: {
+        },
+        created() {
+            this.$http.get('http://localhost:3300/livres')
+                .then(
+                    response => {
+                        this.livres= response.body
+                    }, response => {
+                        console.log('Error!');
+                    });
+        }
+    });
+</script>
+</body>
+</html>
